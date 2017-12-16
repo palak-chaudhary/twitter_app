@@ -1,0 +1,11 @@
+<h1>Welcome</h1>
+
+<% if twitter_user_signed_in? -%>
+	<%= link_to "LogOut", destroy_twitter_user_session_path, method: :delete %>
+	<%= link_to "Add Tweet", new_tweet_path %>
+	<%= link_to 'See Tweets', tweets_path %>
+	<%= link_to "Follow People", new_user_following_path %>
+<% else -%>
+	<%= link_to "SignUp", new_twitter_user_registration_path %>
+	<%= link_to "LogIn", new_twitter_user_session_path %>
+<% end -%>
